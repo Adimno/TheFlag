@@ -34,9 +34,6 @@ if (isset($_GET['search'])){
                         <li class="nav-item me-2">
                             <a href="about.php">About</a>
                         </li>
-                        <li class="nav-item me-2">
-                          <a href="team.php">Team</a>
-                      </li>
                       <li class="nav-item me-2">
                         <a href="contact.php">Contact</a>
                     </li>

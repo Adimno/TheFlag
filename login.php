@@ -23,25 +23,22 @@ if (isset($_SESSION['username'])) {
 }
 
 if (isset($_POST['submit'])) {
-    session_start();
-    
-    ////////////////////////
-    $email = $_POST['email'];
-    $password = md5($_POST['password']);
-    $user = mysqli_fetch_row($result);
-    $user = $_POST['username'];
-    $result = getUserByEmail($conn, $email, $password);
-    if ($result->num_rows > 0) {
-                $row = mysqli_fetch_row($result);
-                $_SESSION['username'] = $row['username'];
-                $_SESSION['email'] = $_POST['email'];////////////////////////
-                header("Location: admin.php");
-            } else {
-                echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
-                // session_destroy();////////////////////////
-            }
-       
+  session_start();
 
+  ////////////////////////
+  $email = $_POST['email'];
+  $password = md5($_POST['password']);
+  $user = mysqli_fetch_row($result);
+  $result = getUserByEmail($conn, $email, $password);
+  if ($result->num_rows > 0) {
+      $row = mysqli_fetch_row($result);
+      $_SESSION['username'] = $row['username'];
+      $_SESSION['email'] = $_POST['email']; ////////////////////////
+      header("Location: admin.php");
+  } else {
+      echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
+      // session_destroy();////////////////////////
+  }
 }
 
 function getUserByEmail($conn, $email, $password) {
@@ -101,7 +98,7 @@ if (isset($_GET['registration'])){
                   <div class="d-flex flex-row align-items-center">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" id="email" name="email" class="form-control mb-3" placeholder="Email" />
+                      <input type="username" id="email" name="email" class="form-control mb-3" placeholder="Email" />
                     </div>
                   </div>
 

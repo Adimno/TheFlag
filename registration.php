@@ -111,7 +111,7 @@ if($resultCheck > 0) {
                   <div class="d-flex flex-row align-items-center">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" id="email" name="email" class="form-control mb-3" placeholder="Email" />
+                      <input type="username" id="email" name="email" class="form-control mb-3" placeholder="Email" />
                     </div>
                   </div>
 
